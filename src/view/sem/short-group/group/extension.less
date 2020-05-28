@@ -1,0 +1,160 @@
+.wd80 {
+  width: 80%;
+}
+
+.wd60 {
+  width: 60%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.saveBox {
+  margin    : 10px auto;
+  text-align: center;
+}
+
+.selection {
+  .center {
+    margin    : 10px auto;
+    text-align: center;
+  }
+
+  &>h3 {
+    text-align : left;
+    position   : relative;
+    margin-top : 10px;
+    text-indent: 5px;
+
+    &::before {
+      position        : absolute;
+      content         : "";
+      width           : 3px;
+      height          : 100%;
+      left            : -10px;
+      background-color: #19aa8d;
+    }
+  }
+
+  .ivu-form-item {
+    margin-bottom: 20px;
+    margin-top   : 20px;
+
+    &.low {
+      margin-bottom: 5px;
+    }
+  }
+
+  .imgBox {
+    display : inline-block;
+    position: relative;
+    width   : 121px;
+    height  : 75px;
+    margin  : 5px;
+
+    img {
+      width : 100%;
+      height: 75px;
+    }
+
+    .delImg {
+      .pointer;
+      background-color: red;
+      border-radius   : 50%;
+      position        : absolute;
+      right           : -5px;
+      top             : -5px;
+      color           : #fff;
+    }
+  }
+
+  .tip {
+    padding-left: 3px;
+  }
+
+  .preView {
+    .fl {
+      float: left;
+    }
+
+    margin : 0 auto;
+    width  : 660px;
+    padding: 5px;
+    border : 1px solid black;
+    color  : #1024ee;
+
+    .clearfix::after {
+      content: "";
+      clear  : both;
+    }
+
+    &>h4.title {
+      text-align     : left;
+      text-decoration: underline;
+      font-size      : 16px;
+    }
+
+    .normal {
+      .picUrl {
+        width: 153px;
+      }
+
+      .description {
+        color    : #4e9c62;
+        font-size: 13px;
+        padding  : 5px;
+        width    : calc(100% - 153px - 20px);
+
+        .text {
+          color        : #333;
+          overflow     : hidden;
+          text-overflow: ellipsis;
+          white-space  : nowrap;
+        }
+      }
+
+      .ad {
+        display      : inline-block;
+        padding      : 2px;
+        color        : #efd596;
+        border       : 1px solid #efd596;
+        border-radius: 2px;
+        padding      : 0 2px;
+      }
+    }
+
+    .link {
+      &>p {
+        margin-bottom: 5px;
+      }
+
+      .title {
+        color: #333;
+      }
+
+      .text {
+        display     : inline-block;
+        margin-right: 10px;
+      }
+    }
+
+    .window {
+      &>li {
+        margin-right: 15px;
+        list-style  : none;
+      }
+
+      text-align: center;
+
+      .description {
+        color: red;
+      }
+
+      .windowpic {
+        width : 121px;
+        height: 75px;
+      }
+    }
+  }
+}

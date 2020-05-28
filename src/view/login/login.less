@@ -1,0 +1,112 @@
+@import '~@/assets/style/variables.less';
+@media screen and (min-width: 981px) {
+    .login{
+        width: 100%;
+        height: 100%;
+        background-image: url('../../assets/images/login-bg-min.jpg');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        &-con{
+            position: absolute;
+            right: 160px;
+            top: 50%;
+            transform: translateY(-60%);
+            width: 300px;
+            &-header{
+                font-size: 16px;
+                font-weight: 300;
+                text-align: center;
+                padding: 30px 0;
+            }
+            .form-con{
+                padding: 10px 0 0;
+            }
+            .login-tip{
+                font-size: 10px;
+                text-align: center;
+                color: #c3c3c3;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .login{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        &-con{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -30%);
+            width: 80%;
+            &-header{
+                font-size: 24px;
+                font-weight: 300;
+                text-align: center;
+                padding: 15px 0;
+            }
+            .form-con{
+                padding: 10px 0 0;
+            }
+            .login-tip{
+                font-size: 10px;
+                text-align: center;
+                color: #c3c3c3;
+            }
+        }
+        .loginTitle {
+            font-size: 30;
+            color: @color-theme-green;
+            margin-bottom: 10px;
+            // position: absolute;
+            // font-size: 28px;
+            // top: 10%;
+            // left: 50%;
+            // transform: translateX(-50%);
+            // height: 0;
+            // width: 40%;
+            // padding-bottom: 20%;
+            // background-image: url('../../assets/images/login_logo.png');
+            // background-size: contain;
+            // background-position: center;
+            // background-repeat:no-repeat;
+        }
+        .ivu-card-head p {
+            font-size: 16px;
+            font-weight: 500;
+            color: @color-theme-green;
+        }
+        .ivu-input {
+            font-size: 30;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            color: #999999;
+            padding: 0px;
+        }
+        .ivu-input:focus {
+            border-color: #47bba4;
+            outline: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        .ivu-form-item-error .ivu-input:focus {
+            border-color: #ed4014;
+            outline: 0;
+            -webkit-box-shadow:none;
+            box-shadow:none;
+        }
+        .ivu-form-item-content{
+            margin-bottom: 10px;
+        }
+
+        .forget {
+            font-size: 26;
+            color: #999999;
+        }
+
+    }
+}

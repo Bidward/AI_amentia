@@ -1,0 +1,28 @@
+.revokeDetail{
+    padding: 20px;
+    &>h3{//标题
+    font-size: 13px;
+    text-align: left;
+    position: relative;
+    margin: 10px 0;
+    text-indent: 5px;
+        &::before {// 前面的小绿条
+            position: absolute;
+            content: "";
+            width: 3px;
+            height: 100%;
+            left: -10px;
+            background-color: #19aa8d;
+        }
+    }
+    .ivu-form-item{
+        margin: 0;
+        .content{
+        margin-left: 64px;
+            img{
+                padding: 0 5px;
+                width: 50%;
+            }
+        }
+    }
+}

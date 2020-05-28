@@ -1,0 +1,85 @@
+
+// 点击任务名称样式
+.taskTitle {
+  // border: 1px solid green;
+  position: relative;
+  a {
+    display: inline-block;
+    color: #515a6e;
+    &:after {
+      content: '';
+      display: block;
+      left: 50%;
+      right: 0;
+      bottom: 0px;
+      height: 2px;
+      width: 0;
+      position: absolute;
+      transition: all .3s linear;
+      background: @color-theme-green;
+    }
+    &:hover {
+      color: @color-theme-green;
+      &:after {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+.defaultColor{
+  &>a{
+    color: #515a6e;
+    cursor: default;
+  }
+}
+
+// 滚动条
+.task-types, .detail-page-wrapper {
+  ::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 8px;     /*高宽分别对应横竖滚动条的尺寸*/
+    @media screen and (min-width: 981px) {
+      height: 8px;
+    }
+  }
+  ::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: @color-theme-green;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+  }
+}
+
+// tree-select组件重新
+.treeSelectWrapper  {
+  border-radius: 4px;
+  border: 1px solid #dcdee2;
+  .vue-treeselect__control {
+    border: none;
+    height: 30px;
+  }
+  .vue-treeselect__list-item {
+    &.vue-treeselect__indent-level-2 {
+      padding-left: 25px
+    }
+    &.vue-treeselect__indent-level-1 {
+      padding-left: 25px;
+    }
+  }
+  .vue-treeselect__multi-value {
+    margin-bottom: 0 !important;
+  }
+  .vue-treeselect__value-remove {
+    color: @color-theme-green;
+    background: #eee;
+  }
+  .vue-treeselect__multi-value-label {
+    color: @color-theme-green;
+    background: #eee;
+  }
+}

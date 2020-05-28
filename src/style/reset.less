@@ -1,0 +1,92 @@
+// 详情见 https://github.com/iview/iview/blob/2.0/src/styles/custom.less
+
+
+//菜单
+@menu-dark-title            : @menu-background-color; //非选中一级菜单背景颜色
+@menu-dark-active-bg        : @menu-item-color; //非选中二级菜单背景颜色
+@menu-dark-subsidiary-color : @menu-text-color; //非选中菜单的字体颜色
+
+.ivu-layout-sider {
+    background-color: @menu-background-color; //左侧非菜单区域背景颜色
+    color           : @menu-text-color; //未选中的一级菜单颜色
+    //菜单字体
+    .ivu-menu,.ivu-menu-item{
+        font-size: @font-size-large;
+    }
+    //选中的一级菜单背景颜色
+    .ivu-menu-dark .ivu-menu-opened .ivu-menu-submenu-title {
+        background-color: @menu-item-color;
+    }
+
+    //未选中菜单字体颜色
+    .ivu-menu-dark .ivu-menu-item {
+        color: @menu-text-color
+    }
+    //选中菜单字体颜色
+    .ivu-menu-item.ivu-menu-item-active {
+        color: @menu-text-active-color;
+    }
+}
+
+//tag颜色
+.ivu-tag-primary.ivu-tag-dot .ivu-tag-dot-inner {
+    background: @primary-color;
+}
+
+//表格
+@table-td-hover-bg:@table-hover-color;
+//表头的字体颜色
+.ivu-table-header .ivu-table-cell>span,
+.ivu-table-fixed-header .ivu-table-cell>span,
+.vxe-header--row .vxe-cell{
+    color: @primary-color;
+    .ivu-icon-md-search{
+         color: @table-header-icon;//没内容灰色
+        &.on{
+            color: @primary-color;//当有内容，绿色
+        }
+    }
+}
+//树状图表格表头颜色
+.zk-table__header-wrapper{
+    color: @primary-color;
+}
+//表头内部padding
+.ivu-table-cell{
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+//tabs页面
+.ivu-tabs-nav-container{
+    font-size:@font-size-large;
+}
+
+//icon
+.ivu-icon{
+    vertical-align: middle;//4.x更新为-0.125em
+}
+
+//页面
+
+
+//输入框
+
+
+//下拉框
+
+//步骤Step
+// 审批步骤颜色修改
+.ivu-steps-item.ivu-steps-next-error .ivu-steps-tail > i:after{
+    background: #19AA8D;
+}
+  .ivu-steps-item.ivu-steps-next-error .ivu-steps-tail > i{
+    background: #ed4014
+}
+
+// 站内信form样式
+.stationReceiver {
+    &>.ivu-form-item-content {
+        line-height: 20px;
+    }
+}

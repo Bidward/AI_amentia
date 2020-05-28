@@ -1,0 +1,633 @@
+// @import '~iview/src/styles/index.less';
+@import '~@/assets/style/variables.less';
+@import '~@/assets/style/public.less';
+// @menu-dark-active-bg: #000c17;
+// @layout-sider-background: #001529;
+@menu-dark-title: #001529;
+@menu-dark-active-bg: #4F5E6B;
+@layout-sider-background: #233646;
+// @color-theme-green: #19AA8D;
+
+ul {
+    list-style: none;
+}
+
+// 以下内容全部为复写
+
+.main-layout-con .content-wrapper {
+  padding: 0;
+}
+
+//取消tab标签的内阴影
+#app .tags-nav .scroll-outer {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+// 每个tabpane显示的数字样式
+.task-badge .ivu-badge-count {
+    background: #ccc;
+}
+.active-badge .ivu-badge-count {
+    background: @color-aux-red !important;
+}
+
+.task-types {
+//    电脑端禁止滚动条
+    @media only screen and (min-width: 1024px) {
+        .ivu-table-tip {
+            overflow-x: hidden;
+        }
+    }
+    // 移动端滚动
+    @media screen and (min-width: 320px) and (max-width: 980px) {
+        .ivu-table-tip {
+            overflow: scroll;
+        }
+    }
+    .ivu-tabs {
+        overflow: visible;
+    }
+    .ivu-tabs-tab {
+        min-width: 80px;
+    }
+}
+// element ui table 表头错位
+body .el-table th.gutter{
+    display: table-cell!important;
+}
+body .el-table {
+    font-size: 12px;
+    box-shadow: none;
+    .el-table--border {
+        box-shadow: none;
+    }
+}
+.el-table--enable-row-hover .el-table__body tr:hover>td{
+    background-color: #f0faff !important;
+}
+
+#app .ivu-tabs-tab:hover {
+  color: @color-theme-green;
+}
+
+
+.ivu-tabs.ivu-tabs-card>.ivu-tabs-bar .ivu-tabs-tab-active {
+    color: @color-theme-green;
+    border-color: @color-theme-green !important;
+}
+
+
+//按钮组颜色
+//编辑
+button {
+  &.btns {
+    margin-right: 5px;
+  }
+  &.square{
+    padding: 5px 10px 5px;
+  }
+
+  &.edit {
+    background-color: #19AA8D;
+    border-color: #19AA8D;
+
+    &:hover {
+      background-color: #19AA8D;
+      border-color: #19AA8D;
+    }
+  }
+
+  &.add {
+    background-color: #19AA8D;
+    border-color: #19AA8D;
+
+    &:hover {
+      background-color: #19AA8D;
+      border-color: #19AA8D;
+    }
+  }
+}
+
+.pagePadding {
+    padding: 9px 20px;
+    margin: 20px;
+    background-color: #fff;
+    .zk-table__body-wrapper{
+        //表格滚动条禁止
+        overflow: hidden;
+    }
+    .searchbar{
+        float: right;
+    }
+    .searchbarLeft{
+        float: left;
+    }
+    .pointer{
+        cursor: pointer;
+    }
+
+
+    .tableHeader {
+        width: 100%;
+        height: 32px;
+        margin: 9px 0;
+    }
+
+    .ivu-icon-md-search.on{
+        color: #2d8cf0;
+    }
+
+    &>.ivu-tabs.ivu-tabs-card {
+        .ivu-tabs-nav {
+            float: none;
+            text-align: center;
+            .ivu-tabs-tab:hover {
+                color: #19aa8d;
+            }
+        }
+        .ivu-tabs-nav-container:focus .ivu-tabs-tab-focused{
+            border-color: #19aa8d!important;
+        }
+        &>.ivu-tabs-bar {
+
+            .ivu-tabs-tab {
+                border: none;
+                border-color: #fff;
+                font-size: 16px;
+                padding-bottom: 5px;
+                font-weight: 500;
+                background-color: #fff;
+                color: #666666;
+            }
+            
+            .ivu-tabs-tab-active,
+            .ivu-tabs-tab-focused {
+                font-weight: 500;
+                color: #19aa8d;
+                border-color: #19aa8d;
+                border-bottom: 2px #19aa8d solid !important;
+            }
+        }
+        .ivu-btn-default.ivu-btn:hover{
+            color: #19AA8D;
+            background-color: #fff;
+            border-color: #19AA8D;
+        }
+        .ivu-tabs-tabpane {
+            min-height: 0;
+        }
+    }
+
+    .inner .ivu-tabs.ivu-tabs-card {
+        .ivu-tabs-nav {
+            float: left;
+            text-align: center;
+        }
+
+        .ivu-tabs-tab-active,
+        .ivu-tabs-tab-focused {
+            color: #19aa8d;
+        }
+    }
+}
+
+.ivu-btn-primary {
+  background-color: #19aa8d;
+  border-color: #19aa8d;
+  color: #fff;
+}
+
+.ivu-btn-primary:hover {
+  background-color: #088f74;
+  color: #fff;
+}
+
+
+// 按钮组颜色
+.ivu-btn-primary,
+.ivu-checkbox-indeterminate .ivu-checkbox-inner,
+.ivu-checkbox-checked .ivu-checkbox-inner {
+  background-color: #19aa8d;
+  border-color: #19aa8d;
+}
+
+//dot颜色
+.ivu-tag-primary.ivu-tag-dot .ivu-tag-dot-inner {
+  background: #19aa8d;
+}
+//角色权限页面
+.permisson{
+    //页面主体背景
+    padding: 10px 50px;
+    margin: 20px;
+    background-color: #fff;
+    //外层tab居中显示
+    div[tab='outTable']{
+        .ivu-tabs-bar .ivu-tabs-nav{
+            float: none;
+            text-align: center;
+        }
+        .ivu-tabs-ink-bar{
+            visibility: hidden !important;
+        }
+        .ivu-tabs-tab.ivu-tabs-tab-active{
+            font-weight: 800;
+            border-bottom: 3px #19aa8d solid !important;
+        }
+        
+    }
+    //消除外层tab对内层tab的样式影响
+    div[tab='innerTable']{
+        .ivu-tabs-bar .ivu-tabs-nav{
+            float: left;
+        }
+        .ivu-tabs-bar .ivu-tabs-tab{
+            border: 1px solid #dcdee2 !important;
+            border-bottom:1px solid #dcdee2 !important;
+        }
+        .ivu-tabs-tab.ivu-tabs-tab-active{
+            border-bottom: none !important;
+        }
+    }
+    //任务详情页面的内层tab 样式是单独的
+    div[tab='detailTable']{
+        .ivu-tabs-bar .ivu-tabs-nav{
+            float: left;
+        }
+        .ivu-tabs-bar .ivu-tabs-tab{
+            border: none;
+            border-bottom:none;
+        }
+        .ivu-tabs-tab.ivu-tabs-tab-active{
+            border-bottom: none !important;
+        }
+        .ivu-tabs-tab:nth-last-of-type(1){
+            content: '' !important;
+        }
+        .ivu-tabs-tab::after{
+            content: '.';
+            position: relative;
+            left: 35%;
+            bottom: 4px;
+        }
+    }
+    //所有tab颜色复写
+    .ivu-tabs-nav .ivu-tabs-tab-active {
+        color: #19AA8D;
+    }
+    .ivu-tabs-nav .ivu-tabs-tab:hover {
+        color: #19AA8D;
+    }
+    .ivu-tabs-bar .ivu-tabs-ink-bar {
+        visibility: hidden;
+    }
+    .ivu-tabs-ink-bar{
+        background-color: #19AA8D;
+    }
+    .ivu-tabs.ivu-tabs-card>.ivu-tabs-bar .ivu-tabs-tab-active{
+        color: #19AA8D;
+    }
+    .ivu-tabs-nav-container:focus .ivu-tabs-tab-focused{
+        border-color: #19AA8D!important;
+    }
+    //徽章样式复写
+    .badgeAllColor{
+        padding: 0px;
+        margin:0px 0px 0px 6px;
+        border-radius: 3px;
+        background-color: darkgray;
+    }
+    .badegActiveColor sup{
+        background-color: red !important;
+    }
+    //全局搜索框
+    .searchInput{
+        position: relative;
+        float: right;
+        top: 36px;
+        z-index:100;
+    }
+    //表头搜索按钮间距
+    .ivu-icon.ivu-icon-ios-search{
+        margin-left: 5px;
+    }
+    .launchTask{
+        margin-bottom: 13px;
+    }
+    .ivu-select-visible .ivu-select-selection{
+        border-color: #19AA8D;
+        outline: 0;
+        box-shadow:none;
+    }
+    .ivu-select-selection-focused, .ivu-select-selection:hover{
+        border-color: #19AA8D;
+    }
+    .ivu-select-item-selected, .ivu-select-item-selected:hover{
+        color: #19AA8D !important;
+    }
+    //中间操作栏按钮颜色调整
+    .simple.ivu-btn:hover {
+        color: #19AA8D;
+        background-color: #fff;
+        border-color: #19AA8D;
+    }
+    .ivu-btn:focus {
+        border-color: #19AA8D;
+        outline: 0;
+        box-shadow:none;
+    }
+    .ivu-btn:focus {
+        border-color: #19AA8D;
+        outline: 0;
+    }
+    .ivu-btn:hover {
+        border-color: #19AA8D;
+        outline: 0;
+    }
+    .ivu-input:hover {
+        border-color: #19AA8D;
+    }
+    .ivu-input:focus {
+        border-color: #19AA8D;
+        outline: 0;
+        box-shadow:none;
+    }
+
+    
+    //表格表头样式
+    .ivu-table-header .ivu-table-cell span {
+        color: #19AA8D;
+        .ivu-table-column-center{
+            text-align: center;
+        }
+        .ivu-icon.ivu-icon-ios-search{
+            color: darkgray;
+        }
+        .ivu-icon.ivu-icon-ios-search:hover{
+            color: #19AA8D;
+        }
+        .ivu-icon.ivu-icon-md-close-circle{
+            color: #fff;
+        }
+        
+    }
+}   
+//云平台
+.cloudCooper{
+    //页面主体背景
+    padding: 0px 20px 10px;
+    margin: 20px;
+    background-color: #fff;
+    //外层tab居中显示
+    div[tab='outTable']{
+        .ivu-tabs-bar .ivu-tabs-nav{
+            float: none;
+            text-align: center;
+            line-height: 31px;
+        }
+        .ivu-tabs-ink-bar{
+            visibility: hidden !important;
+        }
+        .ivu-tabs-tab.ivu-tabs-tab-active{
+            font-weight: 800;
+            border-bottom: 3px #19aa8d solid !important;
+        }
+        
+    }
+    //消除外层tab对内层tab的样式影响
+    div[tab='innerTable']{
+        .ivu-tabs-bar .ivu-tabs-nav{
+            float: left;
+            line-height: initial;
+        }
+        .ivu-tabs-bar .ivu-tabs-tab{
+            border: 1px solid #dcdee2 !important;
+            border-bottom:1px solid #dcdee2 !important;
+        }
+        .ivu-tabs-tab.ivu-tabs-tab-active{
+            border-bottom: none !important;
+        }
+    }//发起任务弹框样式end
+}
+//云平台
+.cloudCooper{
+    //页面主体背景
+    padding: 0px 20px 10px;
+    margin: 20px;
+    background-color: #fff;
+    //外层tab居中显示
+    div[tab='outTable']{
+        .ivu-tabs-bar .ivu-tabs-nav{
+            float: none;
+            text-align: center;
+            line-height: 31px;
+        }
+        .ivu-tabs-ink-bar{
+            visibility: hidden !important;
+        }
+        .ivu-tabs-tab.ivu-tabs-tab-active{
+            font-weight: 800;
+            border-bottom: 3px #19aa8d solid !important;
+        }
+        
+    }
+    //消除外层tab对内层tab的样式影响
+    div[tab='innerTable']{
+        .ivu-tabs-bar .ivu-tabs-nav{
+            float: left;
+            line-height: initial;
+        }
+        .ivu-tabs-bar .ivu-tabs-tab{
+            border: 1px solid #dcdee2 !important;
+            border-bottom:1px solid #dcdee2 !important;
+        }
+        .ivu-tabs-tab.ivu-tabs-tab-active{
+            border-bottom: none !important;
+        }
+    }
+
+    //所有tab颜色复写
+    .ivu-tabs-nav .ivu-tabs-tab-active {
+        color: #19AA8D;
+    }
+    .ivu-tabs-nav .ivu-tabs-tab:hover {
+        color: #19AA8D;
+    }
+    .ivu-tabs-bar .ivu-tabs-ink-bar {
+        visibility: hidden;
+    }
+    .ivu-tabs-ink-bar{
+        background-color: #19AA8D;
+    }
+    .ivu-tabs.ivu-tabs-card>.ivu-tabs-bar .ivu-tabs-tab-active{
+        color: #19AA8D;
+    }
+    .ivu-tabs-nav-container:focus .ivu-tabs-tab-focused{
+        border-color: #19AA8D!important;
+    }
+    //徽章样式复写
+    .badgeAllColor{
+        padding: 0px;
+        margin:0px 0px 0px 6px;
+        border-radius: 3px;
+        background-color: darkgray;
+    }
+    .badegActiveColor sup{
+        background-color: red !important;
+    }
+    //全局搜索框
+    .searchInput{
+        position: relative;
+        float: right;
+        top: 0px;
+        z-index:100;
+    }
+    //表头搜索按钮间距
+    .ivu-icon.ivu-icon-ios-search{
+        margin-left: 5px;
+    }
+    .ivu-select-visible .ivu-select-selection{
+        border-color: #19AA8D;
+        outline: 0;
+        box-shadow:none;
+    }
+    .ivu-select-selection-focused, .ivu-select-selection:hover{
+        border-color: #19AA8D;
+    }
+    .ivu-select-item-selected, .ivu-select-item-selected:hover{
+        color: #19AA8D !important;
+    }
+    //中间操作栏按钮颜色调整
+    //加icon的按钮
+    .ivu-btn.ivu-btn-default.ivu-btn-icon-only:hover{
+        color: #19aa8d;
+        background-color: #fff;
+        border-color: #19aa8d;
+    }
+    .ivu-btn.ivu-btn-default.ivu-btn-icon-only:focus{
+        outline: 0;
+        box-shadow:none;
+    }
+    //type 为空的按钮
+    .simple.ivu-btn:hover {
+        color: #19AA8D;
+        background-color: #fff;
+        border-color: #19AA8D;
+    }
+    .simple.ivu-btn:focus {
+        border-color: #19AA8D;
+        outline: 0;
+    }
+    //type 为 primary的按钮
+    .ivu-btn.ivu-btn-primary:focus {
+        border-color: #19AA8D;
+        outline: 0;
+        box-shadow:none;
+    }
+    .ivu-btn.ivu-btn-primary:focus {
+        border-color: #19AA8D;
+        outline: 0;
+    }
+    //type为error的按钮
+    .ivu-btn.ivu-btn-error:hover {
+        color: #fff;
+        border-color: #ed4014;
+    }
+    .ivu-btn.ivu-btn-error:focus {
+        border-color: #f16643;
+        outline: 0;
+    }
+    .reload.ivu-btn:hover{
+        color: #19AA8D;
+        background-color: #fff;
+        border-color: #19AA8D;
+    }
+    .reload.ivu-btn:focus{
+        border-color: #19AA8D;
+        outline: 0;
+    }
+    //输入框
+    .ivu-input:hover {
+        border-color: #19AA8D;
+    }
+    .ivu-input:focus {
+        border-color: #19AA8D;
+        outline: 0;
+        box-shadow:none;
+    }
+    //表格表头样式
+    .ivu-table-header .ivu-table-cell{
+        padding-left: 7px !important;
+        padding-right: 7px !important;
+    }
+    #link .ivu-table-body .ivu-table-cell{
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    .ivu-table-header .ivu-table-cell span {
+        color: #19AA8D;
+        .ivu-icon.ivu-icon-ios-search{
+            color: darkgray;
+        }
+        .ivu-icon.ivu-icon-ios-search:hover{
+            color: #19AA8D;
+        }
+        .ivu-icon.ivu-icon-md-close-circle{
+            color: #fff;
+        }
+    }
+    .ivu-select-selection{
+        .ivu-select-placeholder{
+            color: #dcdee2 !important
+        }
+        .ivu-select-selected-value{
+            color: #515a6e !important;
+            text-align: -webkit-auto;
+        }
+    }
+    .ivu-page-item-active a, 
+    .ivu-page-item-active:hover a{
+        color:#19aa8d;
+    }
+    .ivu-page-item:hover a{
+        color:#19aa8d;
+    }
+    //产品公司
+    .detailContent{
+        font-size:14px;
+        .cardTitle{
+            border-left: 2px solid #19aa8d;
+            padding-left: 10px;
+        }
+        .addContractIcon{
+            font-size: 12px;
+            color: #19aa8d;
+            cursor: pointer;
+            vertical-align: middle;
+            position: relative;
+            bottom: 1px;
+        }
+        .addContract{
+            font-size: 12px;
+            color: #19aa8d;
+            cursor: pointer;
+        }
+        .title{
+            text-align: right;
+            line-height: 30px;
+            margin-right: 10px;
+        }
+        .require{
+            font-size: 17px;
+            color: red;
+            position: relative;
+            top: 5px;
+            right: 3px;
+        }
+        .rowPadding{
+            margin-bottom:20px;
+        }
+    }
+}
+

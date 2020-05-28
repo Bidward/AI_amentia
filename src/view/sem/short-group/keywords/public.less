@@ -1,0 +1,29 @@
+.public {
+    .pointer {
+        cursor: pointer;
+    }
+
+    .section {
+        .center {
+            margin    : 10px auto;
+            text-align: center;
+        }
+
+        &>h3 {
+            text-align : left;
+            position   : relative;
+            margin-top : 10px;
+            text-indent: 5px;
+
+            &::before {
+                position        : absolute;
+                content         : "";
+                width           : 3px;
+                height          : 100%;
+                left            : -10px;
+                background-color: #19aa8d;
+            }
+        }
+
+    }
+}
