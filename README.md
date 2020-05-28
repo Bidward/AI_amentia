@@ -1,12 +1,11 @@
-# 百助空间智能化系统
+# 人工智障系统
 
 ## 项目简介
-该项目起步于2019年年初，目的是百助年度目标——以智能化系统打造更好的团队
+该项目起步于2019年年初，目的是 年度目标——以 智障系统打造更好的团队
 项目来源于iview-admin，具体可参考 [说明文档](README.OLD.MD) 
 [项目实例](http://https://admin.iviewui.com/home)
 
-## git地址
-https://baizhu.5upm.net/git/BzSystemFront.git
+
 
 ## 文件结构
 ```shell
